@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import random
 
 randomList = random.sample(range(100), 100)
-y = random.sample(range(100), 100)
+lst = list(range(0,100))
+yValue = randomList
 def quick_sort(sequence):
     length = len(sequence)
     if length <= 1:
@@ -20,6 +21,6 @@ def quick_sort(sequence):
         else:
             items_lower.append(item)
     return quick_sort(items_lower) + [pivot] + quick_sort(items_greater)
-
-plt.plot(randomList, y)
-plt.show
+fig = plt.figure(figsize= (10, 5))
+plt.bar(randomList, lst, color='maroon', width = .4)
+plt.show()
